@@ -11,4 +11,6 @@ class MainWindow(QMainWindow):
 
         self.setCentralWidget(central_widget)
 
-        self.setWindowTitle("Change me!")
+        self.setWindowTitle("Abschlussprüfung 2024/25")
+
+        self.resize(800, 600)
