@@ -19,12 +19,37 @@ class CentralWidget(QChartView):
         axis_euro.setRange(95.0, 140.0)
 
 
+#1
+        line_series_boersenstart = QLineSeries()
+        line_series_boersenstart.setName('Börsenstart')
+
+#2
+        line_series_tageshoch = QLineSeries()
+        line_series_tageshoch.setName('Tageshoch')
+
+        line_series_tagestief = QLineSeries()
+        line_series_tagestief.setName('Tagestief')
+
+        line_series_boersenschluss = QLineSeries()
+        line_series_boersenschluss.setName('Börsenschluss')
+
+
 
 
         chart = QChart()
         chart.setTitle("Aktienkurs")
+        chart.addSeries(line_series_boersenstart)
+        chart.addSeries(line_series_tageshoch)
+        chart.addSeries(line_series_tagestief)
+        chart.addSeries(line_series_boersenschluss)
         chart.addAxis(axis_date_time, Qt.AlignmentFlag.AlignBottom)
         chart.addAxis(axis_euro, Qt.AlignmentFlag.AlignLeft)
+
+
+        line_series_boersenstart.attachAxis(axis_date_time)
+        line_series_tageshoch.attachAxis(axis_euro)
+        line_series_tagestief.attachAxis(axis_euro)
+        line_series_boersenschluss.attachAxis(axis_euro)
 
 
 
