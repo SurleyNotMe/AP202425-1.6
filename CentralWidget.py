@@ -33,6 +33,11 @@ class CentralWidget(QChartView):
         line_series_boersenschluss = QLineSeries()
         line_series_boersenschluss.setName('Börsenschluss')
 
+        #Falls Farbe des Graph geändert werden muss
+        pen = line_series_boersenschluss.pen()
+        pen.setColor(QColor(Qt.GlobalColor.green))
+        line_series_boersenschluss.setPen(pen)
+
 
 
 
